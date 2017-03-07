@@ -1,0 +1,19 @@
+{
+    "name": "forkiss/pharest-framework",
+    "description": "Pharest is a restful api PHP library that base phalcon extension.",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.10",
+        "ext-phalcon": ">=3.0.0",
+        "forkiss/pharest": "~0.1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "prefer-stable": true
+}
