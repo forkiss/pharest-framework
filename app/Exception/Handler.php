@@ -16,18 +16,18 @@ class Handler implements \Pharest\Exception\ExceptionHandler
     {
         $result = [];
 
-        if ($exception instanceof \Pharest\Exception\NotFoundException) {
+        if ($exception instanceof NotFoundException) {
             $result = [
                 'code'    => 20,
                 'message' => $exception->getMessage()
             ];
-        } elseif ($exception instanceof \Pharest\Exception\RouterException) {
+        } elseif ($exception instanceof RouterException) {
             $response->setStatusCode(404);
             $result = [
                 'code'    => 21,
                 'message' => 'uri invalid'
             ];
-        } elseif ($exception instanceof \Pharest\Exception\MessageException) {
+        } elseif ($exception instanceof MessageException) {
             $result = [
                 'code'    => $exception->getCode(),
                 'message' => $exception->getMessage()
