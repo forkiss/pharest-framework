@@ -21,7 +21,7 @@ class Handler implements \Pharest\Exception\ExceptionHandler
                 'code'    => 20,
                 'message' => $exception->getMessage()
             ];
-        } elseif ($exception instanceof RouterException) {
+        } elseif ($exception instanceof \Pharest\Exception\RouterException) {
             $response->setStatusCode(404);
             $result = [
                 'code'    => 21,
