@@ -6,4 +6,5 @@
 $router->setHandler(\App\Controller\Example\IndexController::class, true);
 
 // add url and handler function name
+$router->get('/', 'show');
 $router->get('/test', 'show');

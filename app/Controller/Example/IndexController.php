@@ -2,7 +2,7 @@
 
 namespace App\Controller\Example;
 
-class IndexController extends \App\Controller\BaseController
+class IndexController extends \Pharest\Controller
 {
 
     public function show()
