@@ -26,6 +26,12 @@ class Handler implements \Pharest\Exception\ExceptionHandler
                 'code'    => 20,
                 'message' => $exception->getMessage()
             ];
+        } elseif ($exception instanceof \Pharest\Exception\ValidateException) {
+            $result = [
+                'code'    => 30,
+                'message' => $exception->getMessage(),
+                'data'    => $exception->getMessages()
+            ];
         }
 
         $response->setJsonContent($result);

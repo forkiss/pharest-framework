@@ -6,15 +6,6 @@
  */
 
 /**
- * Shared configuration service
- */
-$this->di->setShared('config', function () use (&$config) {
-    $config->datetime = date('Y-m-d H:i:s');
-
-    return $config;
-});
-
-/**
  * Database connection is created based in the parameters defined in the configuration file
  */
 $this->di->setShared('db', function () use (&$config) {
