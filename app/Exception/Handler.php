@@ -2,6 +2,8 @@
 
 namespace App\Exception;
 
+use App\Enums\Code;
+
 class Handler implements \Pharest\Exception\ExceptionHandler
 {
 
@@ -14,23 +16,25 @@ class Handler implements \Pharest\Exception\ExceptionHandler
      */
     public function handle(\Phalcon\Http\Response &$response, \Exception $exception)
     {
-        $result = [];
-
         if ($exception instanceof MessageException) {
             $result = [
-                'code'    => $exception->getCode(),
+                'code'    => Code::Ok,
                 'message' => $exception->getMessage()
             ];
         } elseif ($exception instanceof \Pharest\Exception\NotFoundException) {
             $result = [
-                'code'    => 20,
+                'code'    => Code::NotFound,
                 'message' => $exception->getMessage()
             ];
         } elseif ($exception instanceof \Pharest\Exception\ValidateException) {
             $result = [
-                'code'    => 30,
-                'message' => $exception->getMessage(),
-                'data'    => $exception->getMessages()
+                'code'    => Code::ValidateFail,
+                'message' => $exception->getMessages()
+            ];
+        } else {
+            $result = [
+                'code'    => Code::NoMessage,
+                'message' => 'unknown error'
             ];
         }
 

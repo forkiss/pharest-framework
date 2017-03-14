@@ -10,6 +10,11 @@ return [
             'version' => true,
             'path'    => 'routers/'
         ],
+        'validate'     => [
+            'enable'         => true,
+            'cancel_on_fail' => false,
+            'methods'        => ['POST', 'PUT']
+        ]
     ],
     'database'    => [
         'adapter'  => 'Mysql',
