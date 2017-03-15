@@ -1,18 +1,20 @@
 <?php
 
 return [
-    'application' => [
+    'app' => [
         'debug'        => true,
+        'finder'       => [
+            'fail_header' => 'HTTP/1.1 404 Not Found'
+        ],
         'dependencies' => [
-            'path' => 'config/dependencies.php'
+            'path' => '/config/dependencies.php'
         ],
         'route'        => [
             'version' => true,
-            'path'    => 'routers/'
+            'path'    => APP_ROOT . '/routers/'
         ],
         'validate'     => [
-            'enable'         => true,
-            'cancel_on_fail' => false,
+            'cancel_on_fail' => true,
             'methods'        => ['POST', 'PUT']
         ]
     ],
