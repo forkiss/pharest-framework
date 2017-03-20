@@ -1,7 +1,9 @@
 <?php
 
+define('APP_ROOT', dirname(__DIR__));
+
 return [
-    'app'      => [
+    'app'         => [
         'debug'        => true,
         'finder'       => [
             'fail_header' => 'HTTP/1.1 404 Not Found'
@@ -38,5 +40,9 @@ return [
             'host' => '127.0.0.1',
             'auth' => null
         ]
+    ],
+    // for develop tools
+    'application' => [
+        'modelsDir' => APP_ROOT . '/Models/',
     ]
 ];
