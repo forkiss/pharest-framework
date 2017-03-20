@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'app' => [
+    'app'      => [
         'debug'        => true,
         'finder'       => [
             'fail_header' => 'HTTP/1.1 404 Not Found'
@@ -14,8 +14,8 @@ return [
             'path'    => APP_ROOT . '/routers/'
         ],
         'validate'     => [
-            'cancel_on_fail' => true,
-            'methods'        => ['POST', 'PUT']
+            'multi'   => false,
+            'methods' => ['POST', 'PUT']
         ]
     ],
     'database'    => [
