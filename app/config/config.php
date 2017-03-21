@@ -1,19 +1,14 @@
 <?php
 
-define('APP_ROOT', dirname(__DIR__));
-
 return [
     'app'         => [
         'debug'        => true,
         'finder'       => [
             'fail_header' => 'HTTP/1.1 404 Not Found'
         ],
-        'dependencies' => [
-            'path' => '/config/dependencies.php'
-        ],
         'route'        => [
+            'path'    => '/app/routers/',
             'version' => true,
-            'path'    => APP_ROOT . '/routers/'
         ],
         'validate'     => [
             'multi'   => false,
@@ -43,6 +38,6 @@ return [
     ],
     // for develop tools
     'application' => [
-        'modelsDir' => APP_ROOT . '/Models/',
+        'modelsDir' => 'app/Models/',
     ]
 ];

@@ -7,7 +7,7 @@
     "require": {
         "php": ">=7.0.10",
         "ext-phalcon": ">=3.0.0",
-        "forkiss/pharest": "~0.6"
+        "forkiss/pharest": "~0.7"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4"
