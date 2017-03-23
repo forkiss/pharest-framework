@@ -11,7 +11,7 @@ class Kernel
      * @var array
      */
     public $middleware = [
-        \App\Middleware\AuthMiddleware::class => 'before'
+        \App\Middleware\AuthMiddleware::class
     ];
 
 }
