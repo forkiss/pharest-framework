@@ -10,6 +10,9 @@ return [
             'path'    => '/app/routers/',
             'version' => true,
         ],
+        'dependencies' => [
+            'path' => '/app/config/dependencies.php'
+        ],
         'validate'     => [
             'multi'   => false,
             'methods' => ['POST', 'PUT']

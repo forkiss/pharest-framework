@@ -1,14 +1,15 @@
 <?php
 
 /**
- * @var \Pharest\Application $this
- * @var \Pharest\Config      $config
+ * @var \Phalcon\Di\FactoryDefault $di
+ * @var \Pharest\Application       $this
+ * @var \Pharest\Config            $config
  */
 
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$this->di->setShared('db', function () use (&$config) {
+$di->setShared('db', function () use (&$config) {
     return new \Phalcon\Db\Adapter\Pdo\Mysql([
         'host'     => $config->database->host,
         'username' => $config->database->username,
@@ -18,7 +19,7 @@ $this->di->setShared('db', function () use (&$config) {
     ]);
 });
 
-$this->di->setShared('redis', function () use (&$config) {
+$di->setShared('redis', function () use (&$config) {
     $redis = new \Redis();
 
     $redis->connect($config->redis->cache->host);
