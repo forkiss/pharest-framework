@@ -14,8 +14,17 @@ return [
             'path' => '/app/config/dependencies.php'
         ],
         'validate'     => [
-            'multi'   => false,
-            'methods' => ['POST', 'PUT']
+            'multi'             => false,
+            'methods'           => [
+                'GET'  => false,
+                'POST' => true,
+                'PUT'  => true
+            ],
+            'filter'            => [
+                'POST' => true,
+                'PUT'  => true
+            ],
+            'allow_empty_types' => []
         ]
     ],
     'database'    => [
