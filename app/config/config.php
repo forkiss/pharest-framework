@@ -3,6 +3,7 @@
 return [
     'app'         => [
         'debug'        => true,
+        'log'          => '/storage/logs/',
         'finder'       => [
             'fail_header' => 'HTTP/1.1 404 Not Found'
         ],
@@ -14,17 +15,16 @@ return [
             'path' => '/app/config/dependencies.php'
         ],
         'validate'     => [
-            'multi'             => false,
-            'methods'           => [
+            'multi'   => false,
+            'methods' => [
                 'GET'  => false,
                 'POST' => true,
                 'PUT'  => true
             ],
-            'filter'            => [
+            'filter'  => [
                 'POST' => true,
                 'PUT'  => true
-            ],
-            'allow_empty_types' => []
+            ]
         ]
     ],
     'database'    => [
