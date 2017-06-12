@@ -3,7 +3,9 @@
 return [
     'app'         => [
         'debug'        => true,
-        'log'          => '/storage/logs/',
+        'environment'  => 'test',
+        'timezone'     => 'Asia/Shanghai',
+        'log'          => '/storage/',
         'finder'       => [
             'fail_header' => 'HTTP/1.1 404 Not Found'
         ],
@@ -22,6 +24,7 @@ return [
                 'PUT'  => true
             ],
             'filter'  => [
+                'GET'  => false,
                 'POST' => true,
                 'PUT'  => true
             ]

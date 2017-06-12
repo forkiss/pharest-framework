@@ -19,22 +19,26 @@ class Handler implements \Pharest\Exception\ExceptionHandler
         if ($exception instanceof MessageException) {
             $result = [
                 'code'    => Code::Ok,
-                'message' => $exception->getMessage()
+                'message' => $exception->getMessage(),
+                'data'    => null
             ];
         } elseif ($exception instanceof \Pharest\Exception\NotFoundException) {
             $result = [
                 'code'    => Code::NotFound,
-                'message' => $exception->getMessage()
+                'message' => $exception->getMessage(),
+                'data'    => null
             ];
         } elseif ($exception instanceof \Pharest\Exception\ValidateException) {
             $result = [
                 'code'    => Code::ValidateFail,
-                'message' => $exception->getMessages()
+                'message' => $exception->getMessage(),
+                'data'    => $exception->getFields()
             ];
         } else {
             $result = [
                 'code'    => Code::NoMessage,
-                'message' => 'unknown error'
+                'message' => 'unknown error',
+                'data'    => null
             ];
         }
 
