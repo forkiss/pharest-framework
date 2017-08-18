@@ -10,11 +10,11 @@ return [
             'fail_header' => 'HTTP/1.1 404 Not Found'
         ],
         'route'        => [
-            'path'    => '/app/routers/',
+            'path'    => '/routers/',
             'version' => true,
         ],
         'dependencies' => [
-            'path' => '/app/config/dependencies.php'
+            'path' => '/config/dependencies.php'
         ],
         'validate'     => [
             'multi'   => false,

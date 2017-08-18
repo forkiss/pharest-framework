@@ -2,7 +2,7 @@
 
 namespace App\Middleware;
 
-class AuthMiddleware implements \Phalcon\Mvc\Micro\MiddlewareInterface
+class AuthMiddleware implements \Pharest\Middleware\Immediately
 {
 
     /**
@@ -11,8 +11,9 @@ class AuthMiddleware implements \Phalcon\Mvc\Micro\MiddlewareInterface
      * @param \Phalcon\Mvc\Micro $app
      * @return bool
      */
-    public function call(\Phalcon\Mvc\Micro $app)
+    public function call(\Phalcon\Mvc\Micro &$app)
     {
         return true;
     }
+
 }
